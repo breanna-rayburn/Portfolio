@@ -1,17 +1,17 @@
 import Image from 'next/image'
-import IconCard from '@/components/IconCard'
-import ProjectCard from '@/components/ProjectCard'
+import IconCard from '@/components/ui/IconCard'
+import ProjectCard from '@/components/ui/ProjectCard'
 import Portrait from '@/public/imgs/portrait.jpg'
 import BarnesWelding from '@/public/imgs/previews/BarnesWelding.png'
 import BarnesSpecialty from '@/public/imgs/previews/BarnesSpecialty.png'
 import TapsCO2 from '@/public/imgs/previews/TapsCO2.png'
-import AnimatedTitle from '@/components/AnimatedTitle'
-import AnimatedText from '@/components/AnimatedText'
-import StaggerWrapper from '@/components/StaggerWrapper'
-import AnimatedChevron from '@/components/AnimatedChevron'
-import AnimatedSection from '@/components/AnimatedSection'
+import AnimatedTitle from '@/components/ui/AnimatedTitle'
+import AnimatedText from '@/components/ui/AnimatedText'
+import StaggerWrapper from '@/components/ui/StaggerWrapper'
+import AnimatedChevron from '@/components/ui/AnimatedChevron'
+import AnimatedSection from '@/components/ui/AnimatedSection'
 
-export default function Home() {
+const HomeSection = () => {
   return (
     <main className="container mx-auto max-w-7xl flex-grow px-6">
       <section className="flex min-h-screen items-center justify-center text-center">
@@ -121,3 +121,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default HomeSection

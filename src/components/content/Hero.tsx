@@ -1,30 +1,14 @@
 'use client'
 
-import { Canvas, useFrame } from '@react-three/fiber'
-import { easing } from 'maath'
-
-const CameraRig = () => {
-  useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [
-        -1 + (state.pointer.x * state.viewport.width) / 3,
-        (1 + state.pointer.y) / 2,
-        5.5,
-      ],
-      0.5,
-      delta
-    )
-    state.camera.lookAt(0, 0, 0)
-  })
-}
+import { Canvas } from '@react-three/fiber'
+import Box from '@/components/mesh/Box'
 
 const Hero = () => {
   return (
     <div className="h-[150vh]">
-      <h1 className="absolute z-10 mt-[50vh] text-9xl text-white">
-        Breanna Rayburn
-      </h1>
+      <div className="absolute z-10 flex h-[100vh] items-center justify-center">
+        <h1 className="text-9xl text-white">Breanna Rayburn</h1>
+      </div>
 
       <Canvas
         shadows
@@ -32,18 +16,7 @@ const Hero = () => {
       >
         <color attach="background" args={['black']} />
         <ambientLight intensity={4} />
-        <spotLight
-          position={[1, 5, 3]}
-          angle={0.2}
-          penumbra={1}
-          intensity={3}
-          castShadow
-          shadow-mapSize={2048}
-        />
-        <mesh receiveShadow castShadow rotation={[0, -Math.PI * 0.85, 0]}>
-          <boxGeometry />
-        </mesh>
-        <CameraRig />
+        <Box />
       </Canvas>
     </div>
   )
